@@ -5,12 +5,19 @@ namespace ParanthesisStringParser.Test
 {
     public class StringParserShould
     {
+        private readonly StringParser _parser;
+
+        public StringParserShould()
+        {
+            _parser = new StringParser();
+        }
+
         [Fact]
         public void ReturnTrueForNull()
         {
             const string textToCheck = null;
 
-            Assert.True(StringParser.Check(textToCheck));
+            Assert.True(_parser.Check(textToCheck));
         }
 
         [Fact]
@@ -18,7 +25,7 @@ namespace ParanthesisStringParser.Test
         {
             var textToCheck = string.Empty;
 
-            Assert.True(StringParser.Check(textToCheck));
+            Assert.True(_parser.Check(textToCheck));
         }
 
         [Fact]
@@ -26,7 +33,7 @@ namespace ParanthesisStringParser.Test
         {
             const string textToCheck = "()";
 
-            Assert.True(StringParser.Check(textToCheck));
+            Assert.True(_parser.Check(textToCheck));
         }
 
         [Fact]
@@ -34,7 +41,7 @@ namespace ParanthesisStringParser.Test
         {
             const string textToCheck = ")(";
 
-            Assert.False(StringParser.Check(textToCheck));
+            Assert.False(_parser.Check(textToCheck));
         }
 
         [Fact]
@@ -42,7 +49,7 @@ namespace ParanthesisStringParser.Test
         {
             const string textToCheck = "()()";
 
-            Assert.True(StringParser.Check(textToCheck));
+            Assert.True(_parser.Check(textToCheck));
         }
 
         [Fact]
@@ -50,7 +57,7 @@ namespace ParanthesisStringParser.Test
         {
             const string textToCheck = "[]";
 
-            Assert.True(StringParser.Check(textToCheck));
+            Assert.True(_parser.Check(textToCheck));
         }
 
         [Fact]
@@ -58,7 +65,7 @@ namespace ParanthesisStringParser.Test
         {
             const string textToCheck = "][";
 
-            Assert.False(StringParser.Check(textToCheck));
+            Assert.False(_parser.Check(textToCheck));
         }
 
         [Fact]
@@ -66,7 +73,7 @@ namespace ParanthesisStringParser.Test
         {
             const string textToCheck = "[][]";
 
-            Assert.True(StringParser.Check(textToCheck));
+            Assert.True(_parser.Check(textToCheck));
         }
 
         [Fact]
@@ -74,7 +81,7 @@ namespace ParanthesisStringParser.Test
         {
             const string textToCheck = "(]";
 
-            Assert.False(StringParser.Check(textToCheck));
+            Assert.False(_parser.Check(textToCheck));
         }
 
         [Fact]
@@ -82,7 +89,7 @@ namespace ParanthesisStringParser.Test
         {
             const string textToCheck = "](";
 
-            Assert.False(StringParser.Check(textToCheck));
+            Assert.False(_parser.Check(textToCheck));
         }
 
         [Fact]
@@ -90,7 +97,7 @@ namespace ParanthesisStringParser.Test
         {
             const string textToCheck = "[]()";
 
-            Assert.True(StringParser.Check(textToCheck));
+            Assert.True(_parser.Check(textToCheck));
         }
 
         [Fact]
@@ -98,7 +105,7 @@ namespace ParanthesisStringParser.Test
         {
             const string textToCheck = "(()]";
 
-            Assert.False(StringParser.Check(textToCheck));
+            Assert.False(_parser.Check(textToCheck));
         }
     }
 }
