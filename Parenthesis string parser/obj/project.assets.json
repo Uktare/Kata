@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\source\\repos\\Kata\\Parenthesis string parser\\Parenthesis string parser.csproj",
-      "projectName": "Parenthesis string parser",
-      "projectPath": "D:\\source\\repos\\Kata\\Parenthesis string parser\\Parenthesis string parser.csproj",
+      "projectUniqueName": "D:\\source\\repos\\Kata\\Parenthesis string parser\\ParenthesisStringParser.csproj",
+      "projectName": "ParenthesisStringParser",
+      "projectPath": "D:\\source\\repos\\Kata\\Parenthesis string parser\\ParenthesisStringParser.csproj",
       "packagesPath": "C:\\Users\\maxim\\.nuget\\packages\\",
       "outputPath": "D:\\source\\repos\\Kata\\Parenthesis string parser\\obj\\",
       "projectStyle": "PackageReference",
