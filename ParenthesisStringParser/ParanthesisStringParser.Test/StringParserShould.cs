@@ -107,5 +107,15 @@ namespace ParanthesisStringParser.Test
 
             Assert.False(_parser.Check(textToCheck));
         }
+
+        [Theory]
+        [InlineData("(()())")]
+        [InlineData("(()[]))")]
+        [InlineData("([(())()()])")]
+        [InlineData("[[([()[]][([])])()]]")]
+        public void ReturnTrueOnComplexCases(string textToCheck)
+        {
+            Assert.False(_parser.Check(textToCheck));
+        }
     }
 }
