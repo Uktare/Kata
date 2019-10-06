@@ -9,13 +9,28 @@
                 return true;
             }
 
-            if (text.Contains("()") || text.Contains("[]"))
+            var currentResult = false;
+
+            for (var i = 0; i < text.Length - 1; i++)
             {
-                return true;
+                if (text[i] == '(' && text[i + 1] == ')' || text[i] == '[' && text[i + 1] == ']')
+                {
+                    currentResult = true;
+
+                    var newText = text.Substring(0, i);
+
+                    var offSet = i + 2;
+
+                    if (offSet < text.Length)
+                    {
+                        newText += text.Substring(offSet, text.Length - (1 + offSet));
+                    }
+
+                    currentResult &= Check(newText);
+                }
             }
-            {
-                return false;
-            }
+
+            return currentResult;
         }
     }
 }
